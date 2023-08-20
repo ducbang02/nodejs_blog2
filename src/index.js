@@ -6,9 +6,13 @@ const { engine } = require('express-handlebars');
 const app = express();
 const port = 3000;
 
+//file static
+app.use(express.static(path.join(__dirname, 'public')));
+
+//template morgan
 app.use(morgan('combined'));
 
-//tempble engine
+//template engine
 app.engine('hbs', engine({
   extname:'.hbs'
 
